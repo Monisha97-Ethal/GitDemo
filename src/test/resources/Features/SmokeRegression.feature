@@ -1,0 +1,31 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+Feature: Login Functionality
+Background: User is on the login page
+ 
+@SmokeTest
+Scenario: Successful Login
+Given User is on the login page
+When User enters valid "monishavelu05@gmail.com" and "Ethalya17@22"
+Then User is redirected to Homepage
+@RegressionTest
+Scenario: Login Failed with Incorrect Password
+Given User is on the login page
+When User enters Invalid "sdq@gmail.com" and "user@123"
+Then User is redirected to SigninPage with ErrorMessage
